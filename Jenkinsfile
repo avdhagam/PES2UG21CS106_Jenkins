@@ -17,7 +17,7 @@ sh 'g++ main.cpp -o output'
 stage('Test') {
 
 steps {
-sh './output'
+s './output'
 }
 
 }
