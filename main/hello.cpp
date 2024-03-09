@@ -1,6 +1,7 @@
 //File: hello.cpp
 #include <iostream>
 using namespace std;
+#include<stdio.h>
 
 int main(void) {
   cout << "Hello, World\n";
