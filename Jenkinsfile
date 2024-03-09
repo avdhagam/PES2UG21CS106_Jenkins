@@ -1,35 +1,39 @@
+
 pipeline {
-    agent any
 
-    environment {
-        // Define environment variables if needed
-    }
+agent any
 
-    stages {
-        stage('Build') {
-            steps {
-                build 'PES2UG21CS106'
-                sh 'g++ main.cpp -o output' 
-            }
-        }
+stages {
 
-        stage('Test') {
-            steps {
-                    // Test stage commands
-                    sh './output'
-            }
-        }
 
-        stage('Deploy') {
-            steps {
-                echo 'deploy'
-            }
-        }
-    }
+stage('Build') {
+steps {
+build 'PES2UG21CS106'
+sh 'g++ main.cpp -o output'
 
-    post {
-        failure{
-          error 'Pipeline failed'
-        }
-    }
+}
+
+}
+stage('Test') {
+
+steps {
+sh './output'
+}
+
+}
+
+stage ('Deploy') {
+steps {
+echo 'deploy'
+
+
+}
+}
+}
+post{
+
+failure{
+ error 'Pipeline Failed'
+}
+}
 }
